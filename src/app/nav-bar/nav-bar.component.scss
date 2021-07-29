@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  width: 70vw;
+  margin: auto;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  .nav-bar-link {
+    padding: 3px 20px;
+    border-radius: 4px;
+    color: rgb(241, 240, 240);
+    background-color: rgba(0, 60, 128, 0.473);
+    &:hover{
+        background-color: rgba(0, 60, 128, 0.315);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<section class="form-container" fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="column" fxLayoutAlign="center center">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+
+        <user-profile [parent]="form"></user-profile>
+        <mat-divider></mat-divider>
+        <contact-information [parent]="form"></contact-information>
+
+        <mat-divider></mat-divider>
+        <div class="btns" fxLayout="row" fxLayoutGap="2%" fxLayout.lt-sm="column">
+            <button type="button" mat-raised-button color="primary" (click)="onAddContact()" class="btn add-btn">Add
+                Contact</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid"
+                class="btn submit-btn">Save User Profile</button>
+        </div>
+
+        <!-- <pre>{{form.value|json}}</pre> -->
+
+    </form>
+</section>

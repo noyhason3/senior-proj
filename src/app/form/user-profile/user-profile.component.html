@@ -1,0 +1,33 @@
+<section [formGroup]="parent" fxLayout="column" fxLayoutAlign.lt-sm="center center">
+    <h1 class="formgroup-title">User Profile</h1>
+    <div formGroupName="detail" class="formgroup-container user-profile" fxLayout="row" fxFlexLayout="start"
+        fxLayoutGap="20px" fxLayout.lt-md="column">
+        <div class="formcontrol-container">
+            <mat-form-field class="x">
+                <input matInput type="text" formControlName="name" placeholder="name" class="formcontrol"
+                    id="formcontrol">
+            </mat-form-field>
+            <div *ngIf="name?.hasError('required') && (name?.touched)" class="error-msg">
+                Name is required
+            </div>
+        </div>
+        <!-- <div class="formcontrol-container">
+            <mat-form-field>
+                <input matInput type="text" formControlName="organization" placeholder="organization"
+                    class="formcontrol">
+            </mat-form-field>
+        </div> -->
+        <div>
+            <mat-form-field>
+                <input matInput type="text" placeholder="organization" matInput
+                    formControlName="organization" [matAutocomplete]="auto">
+            </mat-form-field>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of organizations | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+
+        </div>
+    </div>
+</section>

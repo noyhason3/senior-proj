@@ -1,0 +1,53 @@
+<section [formGroup]="parent" class="contact-informatino-view" >
+
+
+    <!-- <mat-form-field>
+        <input type="text" matInput formControlName="contactLabel" placeholder="contact label" class="formcontrol">
+    </mat-form-field> -->
+
+    <div class="contact-informtion-controls"  fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" >
+        <div class="formcontrol-container type" >
+            <mat-form-field >
+                <mat-label>Type of Contact</mat-label>
+                <mat-select formControlName="type" class="formcontrol">
+                    <mat-option value="">Select type</mat-option>
+                    <mat-option value="email">Email</mat-option>
+                    <mat-option value="phone">Phone</mat-option>
+                </mat-select>
+            </mat-form-field>
+<!-- 
+            Type of Contact <select formControlName="type" class="formcontrol">
+                <option value="">Select type</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+            </select> -->
+            <div *ngIf="parent.get('type')?.hasError('required') && parent.get('type')?.dirty" class="error-msg">
+                Type is required
+            </div>
+        </div>
+        <div class="formcontrol-container contactLabel">
+            <mat-form-field >
+                 <input matInput type="text" formControlName="contactLabel" placeholder="contact label"
+                    class="formcontrol">
+            </mat-form-field>
+            <div *ngIf="parent.get('contactLabel')?.hasError('required') && parent.get('contactLabel')?.dirty"
+                class="error-msg">
+                Contact-label is required
+            </div>
+        </div>
+
+        <div class="formcontrol-container emailOrPhone">
+            <mat-form-field>
+                <input matInput type="text" formControlName="emailOrPhone" placeholder="email/phone No."
+                    class="formcontrol">
+            </mat-form-field>
+            <div *ngIf="parent.hasError('invalidVal')" class="error-msg">
+                Email/Phone is invalid
+            </div>
+            <div *ngIf="parent.get('emailOrPhone')?.hasError('required') && !parent.hasError('invalidVal')"
+                class="error-msg">
+                Email/Phone is required
+            </div>
+        </div>
+    </div>
+</section>

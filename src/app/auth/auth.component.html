@@ -1,0 +1,199 @@
+<section class="auth" >
+
+    <section>
+        <mat-icon>home</mat-icon>
+        <h1>Book!</h1>
+    </section>
+
+    <form class="example-form" fxFlex="column">
+        <section>
+            <mat-icon style="display: flex; align-items: center;">person</mat-icon>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. Shir">
+            </mat-form-field>
+
+            <mat-icon></mat-icon>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. Mor">
+            </mat-form-field>
+        </section>
+
+        <section>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <section>
+            <div>
+                <mat-icon>email</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 300px">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput placeholder="Ex. example@gmail.com">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-icon>calendar_today</mat-icon>
+                <mat-form-field appearance="fill">
+                    <mat-label>Check-in & Check-out dates</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate formControlName="start" placeholder="Start date">
+                        <input matEndDate formControlName="end" placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <mat-icon>people</mat-icon>
+                <mat-form-field appearance="fill">
+                    <mat-label>Number of adults</mat-label>
+                    <mat-select>
+                        <mat-option value=1> 1 </mat-option>
+                        <mat-option value=2> 2 </mat-option>
+                        <mat-option value=3> 3 </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-icon>child_care</mat-icon>
+                <mat-form-field appearance="fill">
+                    <mat-label>Number of children</mat-label>
+                    <mat-select>
+                        <mat-option value=1> 1 </mat-option>
+                        <mat-option value=2> 2 </mat-option>
+                        <mat-option value=3> 3 </mat-option>
+                        <mat-option value=3> 4 </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <mat-icon>insert_comment</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Comments</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+            </div>
+            <mat-checkbox class="example-margin">Subscribe to Newsletter</mat-checkbox>
+        </section>
+        <!-- <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign=" baseline"> -->
+        <!-- <mat-icon></mat-icon> -->
+        <!-- </div> -->
+
+        <button mat-raised-button class="submit-btn">Submit</button>
+
+    </form>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ************************************************************************************************************** -->
+<!-- 
+<section class="auth" fxLayout="column" fxFlexAlign="center center">
+
+    <section fxLayout="row" fxLayoutAlign="center" fxLayoutGap="1rem" style="padding: 1rem;" >
+        <mat-icon>home</mat-icon>
+        <h1>Book!</h1>
+    </section>
+
+    <form class="example-form" fxLayout="column" >
+        <section fxLayout="row" fxLayoutAlign="space-between baseline" fxLayoutGap="1rem" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center">
+
+            <mat-icon style="display: flex; align-items: center;">person</mat-icon>
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 300px">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. Shir">
+            </mat-form-field>
+
+            <mat-icon></mat-icon>
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 300px">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. Mor">
+            </mat-form-field>
+        </section>
+
+        <section fxLayout="row" fxLayoutGap="1rem" style="padding: 1.34375em;"  fxLayout.lt-md="column">
+            <mat-radio-group aria-label="Select an option" fxLayout="row" fxLayoutGap="1rem">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <section fxLayout="row" fxLayoutGap="3rem" fxLayoutAlign=" baseline"  fxLayout.lt-md="column">
+            <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign=" baseline"  fxLayout.lt-md="column">
+                <mat-icon>email</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 300px">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput placeholder="Ex. example@gmail.com">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign=" baseline">
+                <mat-icon>calendar_today</mat-icon>
+                <mat-form-field appearance="fill" style="width: 300px">
+                    <mat-label>Check-in & Check-out dates</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate formControlName="start" placeholder="Start date">
+                        <input matEndDate formControlName="end" placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+        </section>
+
+        <section fxLayout="row" fxLayoutGap="3rem"  fxLayout.lt-md="column">
+            <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign=" baseline"  fxLayout.lt-md="column">
+                <mat-icon>people</mat-icon>
+                <mat-form-field appearance="fill" style="width: 300px">
+                    <mat-label>Number of adults</mat-label>
+                    <mat-select>
+                        <mat-option value=1> 1 </mat-option>
+                        <mat-option value=2> 2 </mat-option>
+                        <mat-option value=3> 3 </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign=" baseline"  fxLayout.lt-md="column">
+                <mat-icon>child_care</mat-icon>
+                <mat-form-field appearance="fill" style="width: 300px">
+                    <mat-label>Number of children</mat-label>
+                    <mat-select>
+                        <mat-option value=1> 1 </mat-option>
+                        <mat-option value=2> 2 </mat-option>
+                        <mat-option value=3> 3 </mat-option>
+                        <mat-option value=3> 4 </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </section>
+
+        <section fxLayout="column" fxLayoutAlign="center center">
+            <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="center baseline"  fxLayout.lt-md="column">
+                <mat-icon>insert_comment</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 300px">
+                    <mat-label>Comments</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+            </div>
+            <mat-checkbox class="example-margin">Subscribe to Newsletter</mat-checkbox>
+        </section>
+
+        <button mat-raised-button class="submit-btn">Submit</button>
+
+    </form>
+</section> -->

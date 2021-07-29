@@ -1,0 +1,13 @@
+<section [formGroup]="parent" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
+    <h1 *ngIf="contacts.length" class="formgroup-title">Contact Information</h1>
+    <div formArrayName="contacts" class="contacts" fxLayout="row wrap" fxLayoutAlign="space-between" fxLayout.lt-sm="column no-wrap" >
+
+        <div *ngFor="let contact of contacts; let i = index;"class="formgroup-container contact-information">
+            <div [formGroupName]="i" class="contact-information-group">
+                <contact-information-view [parent]="getContact(i)"></contact-information-view>
+
+                <button mat-raised-button color="warn" (click)="onRemoveContact(i)" class="btn remove-btn">Remove</button>
+            </div>
+        </div>
+    </div>
+</section>
